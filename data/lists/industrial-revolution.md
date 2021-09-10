@@ -2,4 +2,4 @@
 title: "Industrial Revolution"
 ---
 
-Progress Studies is the study of the causes of civilizational progress, e.g., the combination of economic, technological, scientific, and cultural advancements that have transformed human life and raised standards of living over the past couple of centuries.
+The Industrial Revolution was massive change in technological application that resulted in a meteoric rise in productivity and prosperity in large parts of the world

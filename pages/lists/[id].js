@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 // Fetches necessary data for the list that matches the provided id
 export async function getStaticProps({ params }) {
     const listData = getListData(params.id);
-    console.log(listData);
     // Set props for the component below
     return {
         props: {
@@ -25,17 +24,16 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ listData }) {
-    console.log(listData);
     return (
         <Layout>
             <div>
-                {listData.data.associatedBooks.map((book, i) =>
-                    book.category === listData.id ? (
+                {listData.data.associatedBooks.map((book, i) => {
+                    return book?.category?.includes(listData.id) ? (
                         <Link key={i} href={`/books/${book.id}`}>
                             <a>{book.title}</a>
                         </Link>
-                    ) : null
-                )}
+                    ) : null;
+                })}
             </div>
             <Link href="/">
                 <a>Back To Home</a>
