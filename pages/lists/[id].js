@@ -24,7 +24,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ listData }) {
-    console.log(listData);
     return (
         <Layout>
             {listData.data.categoryInfo.title}
