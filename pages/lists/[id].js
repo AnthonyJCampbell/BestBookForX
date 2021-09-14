@@ -24,16 +24,22 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ listData }) {
+    console.log(listData);
     return (
         <Layout>
+            {listData.data.categoryInfo.title}
             <div>
-                {listData.data.associatedBooks.map((book, i) => {
-                    return book?.category?.includes(listData.id) ? (
-                        <Link key={i} href={`/books/${book.id}`}>
-                            <a>{book.title}</a>
-                        </Link>
-                    ) : null;
-                })}
+                <ul>
+                    {listData?.data?.booksInCategory?.map((book, i) => {
+                        return book?.category?.includes(listData.id) ? (
+                            <li key={i}>
+                                <Link href={`/books/${book.id}`}>
+                                    <a>{book.title}</a>
+                                </Link>
+                            </li>
+                        ) : null;
+                    })}
+                </ul>
             </div>
             <Link href="/">
                 <a>Back To Home</a>

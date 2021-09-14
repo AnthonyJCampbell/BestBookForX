@@ -1,5 +1,7 @@
 ---
 title: "Energy: A Global History"
+author: "Richard Rhodes"
+isbn: "123456789"
 category: ["growth-studies"]
 ---
 
