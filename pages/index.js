@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 
 import styles from "../styles/Home.module.css";
 
-import prisma from "../lib/prisma";
+// import prisma from "../lib/prisma";
 
 import { getSortedListsData } from "../lib/lists";
 import { getAllBookData } from "../lib/books";
@@ -19,19 +19,18 @@ import { getAllBookData } from "../lib/books";
 //     }
 // }
 export async function getStaticProps() {
-    const feed = await prisma.post.findMany({
-        where: { published: true },
-        include: {
-            author: {
-                select: { name: true },
-            },
-        },
-    });
+    // const feed = await prisma.post.findMany({
+    //     where: { published: true },
+    //     include: {
+    //         author: {
+    //             select: { name: true },
+    //         },
+    //     },
+    // });
     const allListsData = getSortedListsData();
     const allBookData = getAllBookData();
     return {
         props: {
-            feed,
             allListsData,
             allBookData,
         },
@@ -65,9 +64,9 @@ export default function Home(props) {
                         </li>
                     ))}
                     <br />
-                    {props.feed.map((i, j) => (
+                    {/* {props.feed.map((i, j) => (
                         <div key={j}>{i.title}</div>
-                    ))}
+                    ))} */}
                 </main>
 
                 <footer className={styles.footer}>Footer</footer>
