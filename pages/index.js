@@ -19,14 +19,14 @@ import { getAllBookData } from "../lib/books";
 //     }
 // }
 export async function getStaticProps() {
-    const feed = await prisma.post.findMany({
-        where: { published: true },
-        include: {
-            author: {
-                select: { name: true },
-            },
-        },
-    });
+    // const feed = await prisma.post.findMany({
+    //     where: { published: true },
+    //     include: {
+    //         author: {
+    //             select: { name: true },
+    //         },
+    //     },
+    // });
     const allListsData = getSortedListsData();
     const allBookData = getAllBookData();
     return {
@@ -65,9 +65,9 @@ export default function Home(props) {
                         </li>
                     ))}
                     <br />
-                    {props.feed.map((i, j) => (
+                    {/* {props.feed.map((i, j) => (
                         <div key={j}>{i.title}</div>
-                    ))}
+                    ))} */}
                 </main>
 
                 <footer className={styles.footer}>Footer</footer>
